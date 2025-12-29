@@ -180,3 +180,77 @@ body {
   color: #555;
   margin-bottom: 12px;
 }
+
+
+/* =========================
+   MOBILE RESPONSIVE STYLES
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* HERO */
+
+  .hero {
+    flex-direction: column;          /* stack vertically */
+    align-items: flex-start;
+    padding: 64px 24px;
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 56px;                 /* smaller headline */
+  }
+
+  .hero-name {
+    font-size: 20px;
+  }
+
+  .hero-role {
+    font-size: 14px;
+  }
+
+  .hero-profile img {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* INTRO */
+
+  .intro {
+    padding: 32px 24px;
+    font-size: 16px;
+  }
+
+  /* INFO GRID */
+
+  .info-grid {
+    grid-template-columns: 1fr;      /* single column */
+    padding: 40px 24px;
+    gap: 24px;
+  }
+
+  /* WORK SECTION */
+
+  .work {
+    padding: 64px 24px;
+  }
+
+  .work-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;      /* stack cards */
+    gap: 32px;
+  }
+
+  .work-card {
+    padding: 32px;
+  }
+
+  .work-card img {
+    height: 220px;
+  }
+  
+}
