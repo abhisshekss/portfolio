@@ -43,115 +43,59 @@ const Hero = () => {
           <span className="text-sm text-primary font-medium">Open to Work</span>
         </motion.div>
 
-        {/* Main hero with text + photo integration */}
-        <div className="relative">
-          {/* First line */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="flex items-center gap-4 md:gap-6 flex-wrap"
-          >
-            <span className="font-display text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold italic text-muted-foreground/40">
-              I'm a
-            </span>
-            <span className="font-display text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold gradient-text">
-              ui/ux
-            </span>
-          </motion.div>
-
-          {/* Second line with photo integration */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center gap-4 md:gap-6 mt-2 md:mt-0"
-          >
-            <span className="font-display text-6xl md:text-8xl lg:text-9xl xl:text-[11rem] font-black tracking-tight gradient-text">
-              DESI
-            </span>
-            
-            {/* Profile photo integrated with text */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative -mx-4 md:-mx-8"
+        {/* Two column layout */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left - Text content */}
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-6"
             >
-              {/* Accent circle behind photo */}
-              <div className="absolute inset-0 rounded-full bg-primary scale-110" />
-              <motion.div
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 xl:w-52 xl:h-52 rounded-full overflow-hidden border-4 border-background"
-              >
-                <img
-                  src={profilePhoto}
-                  alt="Abhisshek Suresh Kumar - UI/UX Designer"
-                  className="w-full h-full object-cover object-top scale-125"
-                />
-              </motion.div>
-              {/* Floating sparkle */}
-              <motion.div
-                animate={{ y: [-5, 5, -5], rotate: [0, 15, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-2 -right-2 md:-top-4 md:-right-4"
-              >
-                <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-primary fill-primary" />
-              </motion.div>
-            </motion.div>
+              <span className="italic font-light text-muted-foreground/60">I'm a </span>
+              <span className="gradient-text">ui/ux</span>
+              <br />
+              <span className="gradient-text tracking-tight">DESIGNER</span>
+            </motion.h1>
 
-            <span className="font-display text-6xl md:text-8xl lg:text-9xl xl:text-[11rem] font-black tracking-tight gradient-text">
-              GNER
-            </span>
-          </motion.div>
-        </div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-muted-foreground text-lg md:text-xl max-w-xl mb-8 leading-relaxed"
+            >
+              Crafting <span className="text-primary font-medium">intuitive</span>, scalable, and user-centered digital experiences. Passionate about learning and adapting quickly.
+            </motion.p>
 
-        {/* Description and CTAs */}
-        <div className="grid lg:grid-cols-2 gap-8 mt-12 md:mt-16">
-          {/* Left side - description */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col justify-center"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-[2px] bg-primary" />
-              <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-                About Me
-              </span>
-            </div>
-            <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl">
-              Crafting <span className="text-primary font-medium">intuitive</span>, scalable, and user-centered digital experiences. Passionate about learning new technologies and adapting quickly to create meaningful designs.
-            </p>
-          </motion.div>
-
-          {/* Right side - CTAs and info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col gap-6"
-          >
             {/* Services pills */}
-            <div className="flex flex-wrap gap-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-3 mb-8"
+            >
               {["UI Design", "UX Research", "Prototyping", "Design Systems"].map((service, index) => (
                 <motion.span
                   key={service}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -2 }}
                   className="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium cursor-default hover:border-primary/50 transition-colors"
                 >
                   {service}
                 </motion.span>
               ))}
-            </div>
+            </motion.div>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-wrap gap-4"
+            >
               <motion.a
                 href="#portfolio"
                 className="group flex items-center gap-2 px-8 py-4 gradient-bg rounded-full text-primary-foreground font-medium glow-effect relative overflow-hidden"
@@ -170,6 +114,64 @@ const Hero = () => {
               >
                 Let's Chat
               </motion.a>
+            </motion.div>
+          </div>
+
+          {/* Right - Profile photo with creative treatment */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative flex justify-center lg:justify-end"
+          >
+            <div className="relative">
+              {/* Large accent circle behind */}
+              <motion.div
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -inset-6 md:-inset-10 rounded-full bg-primary/80"
+              />
+              
+              {/* Secondary decorative ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute -inset-12 md:-inset-16 rounded-full border-2 border-dashed border-primary/30"
+              />
+
+              {/* Photo container */}
+              <motion.div
+                animate={{ y: [-5, 5, -5] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-background shadow-2xl"
+              >
+                <img
+                  src={profilePhoto}
+                  alt="Abhisshek Suresh Kumar - UI/UX Designer"
+                  className="w-full h-full object-cover object-top"
+                />
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
+              </motion.div>
+
+              {/* Floating sparkle decoration */}
+              <motion.div
+                animate={{ y: [-8, 8, -8], rotate: [0, 10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -right-4 md:-top-6 md:-right-6 p-3 rounded-full bg-card border border-border shadow-lg"
+              >
+                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+              </motion.div>
+
+              {/* Name tag */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 px-4 py-2 rounded-full bg-card border border-border shadow-lg"
+              >
+                <span className="text-sm font-medium gradient-text">Abhisshek</span>
+              </motion.div>
             </div>
           </motion.div>
         </div>
