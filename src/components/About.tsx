@@ -60,8 +60,7 @@ const About = () => {
           >
             <div className="space-y-6">
               <p className="text-lg text-foreground leading-relaxed">
-                I'm a product designer focused on building clean, intuitive interfaces
-                that solve real-world problems.
+                I'm a passionate designer who thrives on learning new things and adapting quickly to emerging technologies and workflows.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 UI/UX Designer with hands-on experience in user-centered design,
@@ -69,9 +68,7 @@ const About = () => {
                 Strong understanding of usability, accessibility, and design systems.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Certified in UI/UX design and actively building design-focused case
-                studies that demonstrate my ability to craft meaningful digital
-                experiences.
+                I'm super eager to learn, highly adaptable, and always ready to take on new challenges. Whether it's a new tool, framework, or design approach — I embrace it with enthusiasm.
               </p>
 
               <motion.div
